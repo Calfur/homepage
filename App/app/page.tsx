@@ -33,7 +33,7 @@ const projects: Project[] = [
   {
     name: "StarWars Bild Countdown",
     url: "https://star-wars-bild-countdown.calfur.dev",
-    github: "https://github.com/star-wars-bild-countdown",
+    github: "https://github.com/Calfur/star-wars-bild-countdown",
     year: "2024",
     favicon: "/favicons/star-wars-countdown.ico",
   },
