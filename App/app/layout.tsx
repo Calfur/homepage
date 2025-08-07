@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Calfur.dev",
+  title: "calfur.dev",
   description: "An overview of Calfurs projects and experiences",
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="apple-mobile-web-app-title" content="Calfur.dev" />
+        <meta name="apple-mobile-web-app-title" content="calfur.dev" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
