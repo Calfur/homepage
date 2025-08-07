@@ -13,7 +13,6 @@ export default function ProjectCard({ project }: { project: Project }) {
               alt={`${project.name} favicon`}
               width={32}
               height={32}
-              className="rounded-md ring-1 ring-gray-200/70 dark:ring-gray-700/60"
             />
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
               {project.name}
