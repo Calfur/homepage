@@ -47,7 +47,7 @@ export default function Home() {
             calfur.dev
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            a couple of more and less serious projects built by me
+            a collection of projects I was involved in over the years
           </p>
         </header>
 
