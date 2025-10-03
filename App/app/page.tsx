@@ -3,6 +3,13 @@ import type { Project } from './types';
 
 const projects: Project[] = [
   {
+    name: "Party Battle",
+    url: "https://party-battle.thirty-degrees.ch",
+    github: "https://github.com/thirty-degrees/party-battle",
+    year: "2025",
+    favicon: "/favicons/party-battle.png",
+  },
+  {
     name: "Jetski",
     url: "https://jetski.calfur.dev",
     github: "https://github.com/Calfur/jetski",
