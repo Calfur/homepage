@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import GitHubIcon from './GitHubIcon';
-import type { Project } from '../types';
+import Image from "next/image";
+import GitHubIcon from "./GitHubIcon";
+import type { Project } from "../types";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
@@ -48,5 +48,3 @@ export default function ProjectCard({ project }: { project: Project }) {
     </div>
   );
 }
-
-

@@ -5,5 +5,3 @@ export type Project = {
   year: string;
   favicon: string;
 };
-
-

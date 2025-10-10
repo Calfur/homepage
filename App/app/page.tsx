@@ -1,5 +1,5 @@
-import ProjectCard from './components/ProjectCard';
-import type { Project } from './types';
+import ProjectCard from "./components/ProjectCard";
+import type { Project } from "./types";
 
 const projects: Project[] = [
   {
@@ -45,7 +45,6 @@ const projects: Project[] = [
     favicon: "/favicons/star-wars-countdown.ico",
   },
 ];
-
 
 export default function Home() {
   return (
