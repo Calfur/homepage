@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           <a
             href={project.url}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             aria-label={`Open website for ${project.name}`}
             className="inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-sm transition-transform duration-200 hover:from-blue-700 hover:to-indigo-700 active:scale-[0.99]"
           >
