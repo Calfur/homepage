@@ -55,13 +55,13 @@ const projects: Project[] = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-950 dark:to-gray-900">
+    <div className="flex flex-col items-center min-h-screen bg-stone-50 dark:bg-stone-950">
       <div className="flex-grow container mx-auto px-4 py-12">
         <header className="text-center mb-14">
-          <h1 className="text-5xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+          <h1 className="text-5xl font-bold mb-3 text-stone-900 dark:text-stone-100">
             calfur.dev
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-lg text-stone-600 dark:text-stone-400">
             a collection of projects I was involved in over the years
           </p>
         </header>
