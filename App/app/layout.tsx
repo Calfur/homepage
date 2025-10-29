@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "calfur.dev",
   description: "An overview of Calfurs projects and experiences",
+  alternates: {
+    canonical: "https://calfur.dev",
+  },
 };
 
 export default function RootLayout({
