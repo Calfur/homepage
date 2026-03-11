@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FooterYear } from "./FooterYear";
 import XIcon from "./XIcon";
 import LinkedInIcon from "./LinkedInIcon";
 import GitHubIcon from "./GitHubIcon";
@@ -7,7 +8,7 @@ export function Footer() {
   return (
     <footer className="footer flex items-center justify-between w-full p-4 max-w-6xl">
       <div className="text-sm text-muted-foreground">
-        © 2025 - {new Date().getFullYear()} Robin Nater
+        © 2025 - <FooterYear /> Robin Nater
       </div>
       <div className="flex gap-4 pb-2">
         <Link
