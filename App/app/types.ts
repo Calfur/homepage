@@ -1,4 +1,9 @@
-export type ProjectLinkType = "website" | "github" | "steam" | "googlePlay";
+export type ProjectLinkType =
+  | "website"
+  | "github"
+  | "steam"
+  | "googlePlay"
+  | "appStore";
 
 export type ProjectLink = {
   type: ProjectLinkType;

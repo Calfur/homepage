@@ -26,6 +26,14 @@ const projects: Project[] = [
     favicon: "/favicons/party-battle.png",
     links: [
       { type: "website", url: "https://party-battle.thirty-degrees.ch" },
+      {
+        type: "appStore",
+        url: "https://apps.apple.com/us/app/party-battle-2-to-8-players/id6752260272",
+      },
+      {
+        type: "googlePlay",
+        url: "https://play.google.com/store/apps/details?id=ch.thirty_degrees.party_battle",
+      },
       { type: "github", url: "https://github.com/thirty-degrees/party-battle" },
     ],
   },

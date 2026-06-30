@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AppStoreIcon from "./AppStoreIcon";
 import GitHubIcon from "./GitHubIcon";
 import GooglePlayIcon from "./GooglePlayIcon";
 import LinkButton from "./LinkButton";
@@ -31,9 +32,25 @@ const linkTypeConfig: Record<ProjectLinkType, LinkTypeConfig> = {
     ariaLabel: (projectName) => `Open Google Play listing for ${projectName}`,
     Icon: GooglePlayIcon,
   },
+  appStore: {
+    label: "App Store",
+    ariaLabel: (projectName) => `Open Apple App Store listing for ${projectName}`,
+    Icon: AppStoreIcon,
+  },
 };
 
+const primaryRowOrder: ProjectLinkType[] = ["appStore", "googlePlay"];
+const secondaryRowOrder: ProjectLinkType[] = ["steam", "github", "website"];
+
 export default function ProjectCard({ project }: { project: Project }) {
+  const linksByType = new Map(project.links.map((link) => [link.type, link]));
+  const primaryRowLinks = primaryRowOrder
+    .map((type) => linksByType.get(type))
+    .filter((link): link is NonNullable<typeof link> => Boolean(link));
+  const secondaryRowLinks = secondaryRowOrder
+    .map((type) => linksByType.get(type))
+    .filter((link): link is NonNullable<typeof link> => Boolean(link));
+
   return (
     <div className="group relative rounded-2xl border border-stone-200/70 dark:border-stone-700/50 bg-white/80 dark:bg-stone-900/60 backdrop-blur shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
       <div className="p-6 flex flex-col h-full">
@@ -54,20 +71,37 @@ export default function ProjectCard({ project }: { project: Project }) {
           </span>
         </div>
 
-        <div className="mt-auto flex flex-wrap gap-3">
-          {project.links.map((link) => {
-            const { label, ariaLabel, Icon } = linkTypeConfig[link.type];
+        <div className="mt-auto flex h-[5.75rem] w-full flex-col justify-end gap-3">
+          <div className="flex h-10 items-center justify-end gap-3">
+            {primaryRowLinks.map((link) => {
+              const { label, ariaLabel, Icon } = linkTypeConfig[link.type];
 
-            return (
-              <LinkButton
-                key={`${link.type}-${link.url}`}
-                href={link.url}
-                label={label}
-                ariaLabel={ariaLabel(project.name)}
-                icon={Icon ? <Icon /> : undefined}
-              />
-            );
-          })}
+              return (
+                <LinkButton
+                  key={`${link.type}-${link.url}`}
+                  href={link.url}
+                  label={label}
+                  ariaLabel={ariaLabel(project.name)}
+                  icon={Icon ? <Icon /> : undefined}
+                />
+              );
+            })}
+          </div>
+          <div className="flex h-10 items-center justify-end gap-3">
+            {secondaryRowLinks.map((link) => {
+              const { label, ariaLabel, Icon } = linkTypeConfig[link.type];
+
+              return (
+                <LinkButton
+                  key={`${link.type}-${link.url}`}
+                  href={link.url}
+                  label={label}
+                  ariaLabel={ariaLabel(project.name)}
+                  icon={Icon ? <Icon /> : undefined}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
