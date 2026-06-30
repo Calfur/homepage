@@ -1,5 +1,6 @@
 import Image from "next/image";
 import GitHubIcon from "./GitHubIcon";
+import GooglePlayIcon from "./GooglePlayIcon";
 import LinkButton from "./LinkButton";
 import SteamIcon from "./SteamIcon";
 import type { Project, ProjectLinkType } from "../types";
@@ -25,6 +26,11 @@ const linkTypeConfig: Record<ProjectLinkType, LinkTypeConfig> = {
     ariaLabel: (projectName) => `Open Steam page for ${projectName}`,
     Icon: SteamIcon,
   },
+  googlePlay: {
+    label: "Google Play",
+    ariaLabel: (projectName) => `Open Google Play listing for ${projectName}`,
+    Icon: GooglePlayIcon,
+  },
 };
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -48,7 +54,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           </span>
         </div>
 
-        <div className="mt-auto flex flex-col sm:flex-row gap-3">
+        <div className="mt-auto flex flex-wrap gap-3">
           {project.links.map((link) => {
             const { label, ariaLabel, Icon } = linkTypeConfig[link.type];
 

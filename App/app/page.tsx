@@ -53,6 +53,10 @@ const projects: Project[] = [
     favicon: "/favicons/q-swiper.ico",
     links: [
       { type: "website", url: "https://q-swiper.calfur.dev" },
+      {
+        type: "googlePlay",
+        url: "https://play.google.com/store/apps/details?id=com.NaterGames.QSwiper",
+      },
       { type: "github", url: "https://github.com/q-swiper" },
     ],
   },
