@@ -1,7 +1,13 @@
+export type ProjectLinkType = "website" | "github" | "steam";
+
+export type ProjectLink = {
+  type: ProjectLinkType;
+  url: string;
+};
+
 export type Project = {
   name: string;
-  url: string;
-  github?: string;
   year: string;
   favicon: string;
+  links: ProjectLink[];
 };

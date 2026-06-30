@@ -4,52 +4,81 @@ import type { Project } from "./types";
 
 const projects: Project[] = [
   {
+    name: "Stellar Frontline",
+    year: "2026",
+    favicon: "/favicons/stellar-frontline.png",
+    links: [
+      {
+        type: "steam",
+        url: "https://store.steampowered.com/app/4362660/Stellar_Frontline/",
+      },
+    ],
+  },
+  {
     name: "Onlinewatermarks",
-    url: "https://onlinewatermarks.com",
     year: "2025",
     favicon: "/favicons/onlinewatermarks.svg",
+    links: [{ type: "website", url: "https://onlinewatermarks.com" }],
   },
   {
     name: "Party Battle",
-    url: "https://party-battle.thirty-degrees.ch",
-    github: "https://github.com/thirty-degrees/party-battle",
     year: "2025",
     favicon: "/favicons/party-battle.png",
+    links: [
+      { type: "website", url: "https://party-battle.thirty-degrees.ch" },
+      { type: "github", url: "https://github.com/thirty-degrees/party-battle" },
+    ],
   },
   {
     name: "Jetski",
-    url: "https://jetski.calfur.dev",
-    github: "https://github.com/Calfur/jetski",
     year: "2025",
     favicon: "/favicons/jetski.ico",
+    links: [
+      { type: "website", url: "https://jetski.calfur.dev" },
+      { type: "github", url: "https://github.com/Calfur/jetski" },
+    ],
   },
   {
     name: "Pannenstreifen",
-    url: "https://pannenstreifen.calfur.dev",
-    github: "https://github.com/Calfur/HighwaySimulator",
     year: "2023",
     favicon: "/favicons/pannenstreifen.png",
+    links: [
+      { type: "website", url: "https://pannenstreifen.calfur.dev" },
+      { type: "github", url: "https://github.com/Calfur/HighwaySimulator" },
+    ],
   },
   {
     name: "Q-Swiper",
-    url: "https://q-swiper.calfur.dev",
-    github: "https://github.com/q-swiper",
     year: "2020",
     favicon: "/favicons/q-swiper.ico",
+    links: [
+      { type: "website", url: "https://q-swiper.calfur.dev" },
+      { type: "github", url: "https://github.com/q-swiper" },
+    ],
   },
   {
     name: "Balloon Race",
-    url: "https://balloon-race.calfur.dev",
-    github: "https://github.com/Calfur/hot-air-balloon-race",
     year: "2019",
     favicon: "/favicons/balloon-race.png",
+    links: [
+      { type: "website", url: "https://balloon-race.calfur.dev" },
+      { type: "github", url: "https://github.com/Calfur/hot-air-balloon-race" },
+    ],
   },
   {
     name: "StarWars Bild Countdown",
-    url: "https://star-wars-bild-countdown.calfur.dev",
-    github: "https://github.com/Calfur/star-wars-bild-countdown",
     year: "2024",
     favicon: "/favicons/star-wars-countdown.ico",
+    links: [
+      {
+        type: "website",
+        url: "https://star-wars-bild-countdown.calfur.dev",
+      },
+      {
+        type: "github",
+        url: "https://github.com/Calfur/star-wars-bild-countdown",
+      },
+    ],
   },
 ];
 

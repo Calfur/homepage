@@ -1,6 +1,31 @@
 import Image from "next/image";
 import GitHubIcon from "./GitHubIcon";
-import type { Project } from "../types";
+import LinkButton from "./LinkButton";
+import SteamIcon from "./SteamIcon";
+import type { Project, ProjectLinkType } from "../types";
+
+type LinkTypeConfig = {
+  label: string;
+  ariaLabel: (projectName: string) => string;
+  Icon?: () => React.JSX.Element;
+};
+
+const linkTypeConfig: Record<ProjectLinkType, LinkTypeConfig> = {
+  website: {
+    label: "Website",
+    ariaLabel: (projectName) => `Open website for ${projectName}`,
+  },
+  github: {
+    label: "GitHub",
+    ariaLabel: (projectName) => `Open GitHub repository for ${projectName}`,
+    Icon: GitHubIcon,
+  },
+  steam: {
+    label: "Steam",
+    ariaLabel: (projectName) => `Open Steam page for ${projectName}`,
+    Icon: SteamIcon,
+  },
+};
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
@@ -24,27 +49,19 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <div className="mt-auto flex flex-col sm:flex-row gap-3">
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener"
-            aria-label={`Open website for ${project.name}`}
-            className="inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium text-white bg-stone-600 shadow-sm transition-transform duration-200 hover:bg-stone-700 active:scale-[0.99]"
-          >
-            Website
-          </a>
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open GitHub repository for ${project.name}`}
-              className="inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-stone-800 bg-stone-100 hover:bg-stone-200 dark:text-stone-200 dark:bg-stone-700 dark:hover:bg-stone-600 transition-colors duration-200"
-            >
-              <GitHubIcon />
-              <span>GitHub</span>
-            </a>
-          )}
+          {project.links.map((link) => {
+            const { label, ariaLabel, Icon } = linkTypeConfig[link.type];
+
+            return (
+              <LinkButton
+                key={`${link.type}-${link.url}`}
+                href={link.url}
+                label={label}
+                ariaLabel={ariaLabel(project.name)}
+                icon={Icon ? <Icon /> : undefined}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
